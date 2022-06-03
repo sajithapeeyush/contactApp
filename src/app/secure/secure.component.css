@@ -1,7 +1,11 @@
-mat-sidenav{
-    height: 100%;
 
+mat-toolbar{background-color: lightskyblue}
+mat-accordion{
+    margin-top: 500px;
 }
-mat-sidenav-content{
-    height: 100%; 
+mat-expansion-panel {
+    
+    text-align: center;
+    margin-left: 400px;
+    width: 500px;
 }

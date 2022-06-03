@@ -38,7 +38,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 import {MatCardModule} from '@angular/material/card';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -76,7 +76,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatExpansionModule
   ],
   providers: [AuthGuard,TokenService,AuthService,
     {

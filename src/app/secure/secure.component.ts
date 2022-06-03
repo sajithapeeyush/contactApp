@@ -42,9 +42,9 @@ export class SecureComponent implements OnInit {
   })
   
   // data={
-  //   // name:'',
-  //   //  email:'',
-  //   // phone:''
+  //   name:'',
+  //    email:'',
+  //   phone:''
   // }
   dataset={
     name:this.addContactForm.value.name,

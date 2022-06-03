@@ -2,7 +2,7 @@
 
 
 
-<mat-toolbar color="bg-light">
+<mat-toolbar color="#ADD8E6">
   <mat-toolbar-row>
    
     <h1> Contact Application</h1>
@@ -22,17 +22,17 @@
           <h1 class="text-center">Login here !!!!!</h1>
          
           <form [formGroup]="loginForm" (ngSubmit)="onsubmit()">
-            <mat-form-field class="full-width" appearance="outline">
+            <mat-form-field class="full-width" appearance="fill">
               <mat-label>User Name</mat-label>
               <input matInput required formControlName="username"
-               placeholder="Enter here"/>
+               placeholder="Enter here">
               <!-- <mat-hint>Username must be unique  !!!</mat-hint> -->
               </mat-form-field>
               <br>
-              <mat-form-field class="full-width" appearance="outline">
+              <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Password</mat-label>
                 <input matInput type="password" required formControlName="password" 
-                placeholder="Enter here"/>
+                placeholder="Enter here">
                 
                 </mat-form-field>
                 <div>
