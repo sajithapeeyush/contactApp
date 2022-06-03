@@ -1,0 +1,96 @@
+
+
+<mat-toolbar color="bg-light">
+    <mat-toolbar-row>
+     
+      <h1> Contact Application</h1>
+    
+      </mat-toolbar-row>
+      </mat-toolbar>
+<mat-card>    
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+        
+           <div class="container text-center">
+    
+             <h1 class="text-center">Create a new contact</h1>
+            
+             <form  [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
+               <mat-form-field class="full-width" appearance="outline">
+                 <mat-label>Name</mat-label>
+                 <input required  formControlName="name"
+                 matInput placeholder="Enter here" [(ngModel)]="data.name"/>
+                 
+                 </mat-form-field>
+                 <br>
+    
+                 <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input type="email" required  formControlName="email"
+                  matInput placeholder="Enter here" [(ngModel)]="data.email"/>
+                  <mat-hint>Email must be unique  !!!</mat-hint>
+                  </mat-form-field>
+                  <br>
+                 <mat-form-field class="full-width" appearance="outline">
+                   <mat-label>phone</mat-label>
+                   <input type="number" required formControlName="phone" matInput 
+                   placeholder="Enter here" [(ngModel)]="data.phone"/>
+                   
+                   </mat-form-field>
+                   <div class="container text-center">
+                     <button mat-raised-button color="black-outline" type="submit">Add Contact</button>
+                   </div>
+                   
+             </form>
+          
+           </div>
+           
+          </div>
+        </div>
+    
+      </div>
+    </div>
+      </mat-card>
+
+
+
+
+
+
+
+
+
+<!-- <div class="main-div">
+    <h1>Add Contact</h1>
+    <div class="container-fluid">
+        <form [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
+            <label for="">Name:</label>
+            <input type="text" placeholder="name" class="form-control" formControlName="name"
+                [ngClass]="{'is-invalid':submit&&f.name.errors}" [(ngModel)]="data.name">
+            <div *ngIf='submit&&f.name.errors' class="invalid-feedback">
+                <div *ngIf='f.name.errors.required'> name is required</div>
+            </div>
+            <label for="">Email:</label>
+            <input type="email" placeholder="Email" class="form-control" formControlName="email"
+                [ngClass]="{'is-invalid':submit&&f.email.errors}" [(ngModel)]="data.email">
+            <div *ngIf='submit&&f.email.errors' class="invalid-feedback">
+                <div *ngIf='f.email.errors.required'>Email is required</div>
+                <div *ngIf='f.email.errors.email'>Invalid email</div>
+            </div>
+
+            <label for="">Phone:</label>
+            <input type="text" placeholder="Phone" class="form-control" formControlName="phone"
+                [ngClass]="{'is-invalid':submit&&f.phone.errors}" [(ngModel)]="data.phone">
+            <div *ngIf='submit&&f.phone.errors' class="invalid-feedback">
+                <div *ngIf='f.phone.errors.required'>Phone number is required</div>
+                <div *ngIf='f.phone.errors.pattern'>Invalid Phone number</div>
+            </div>
+
+            <br><br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div> -->

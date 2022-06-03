@@ -1,0 +1,108 @@
+
+
+
+<mat-toolbar color="bg-light">
+  <mat-toolbar-row>
+   
+    <h1> Contact Application</h1>
+  
+    </mat-toolbar-row>
+    </mat-toolbar>
+<mat-card>    
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+    
+       <div class="container text-center">
+
+         <h1 class="text-center">Create a new account</h1>
+        
+         <form [formGroup]="registrationForm" (ngSubmit)="onsubmit()">
+           <mat-form-field class="full-width" appearance="outline">
+             <mat-label>Name</mat-label>
+             <input required  formControlName="name"
+             matInput placeholder="Enter here"/>
+             
+             </mat-form-field>
+             <br>
+
+             <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="email" required  formControlName="email"
+              matInput placeholder="Enter here"/>
+              <mat-hint>Email must be unique  !!!</mat-hint>
+              </mat-form-field>
+              <br>
+             <mat-form-field class="full-width" appearance="outline">
+               <mat-label>Password</mat-label>
+               <input type="password" required formControlName="password" matInput 
+               placeholder="Enter here"/>
+               
+               </mat-form-field>
+               <div class="container text-center">
+                 <button mat-raised-button color="black-outline" type="submit">Register</button>
+               </div>
+               <div class="container text-center">
+                <a href="/login">Already have an account?</a>
+              </div>
+         </form>
+      
+       </div>
+       
+      </div>
+    </div>
+
+  </div>
+</div>
+  </mat-card>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- <form [formGroup]="registrationForm" (ngSubmit)="onsubmit()">
+    <div class="mb-3">
+        <label for="exampleInputName" class="form-label">name</label>
+        <input type="text" class="form-control" id="exampleInputName" 
+        formControlName="name" [ngClass]="{'is-invalid':submit&&f.name.errors}" 
+        [(ngModel)]="data.name">
+        
+        <div *ngIf="submit&&f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">Name is Required</div>
+        </div>
+        
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" 
+      aria-describedby="emailHelp" formControlName="email" 
+      [ngClass]="{'is-invalid':submit&&f.email.errors}" [(ngModel)]="data.username">
+      <div *ngIf="submit&&f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">email is Required</div>
+        <div *ngIf="f.email.errors.email">email is invalid</div>
+      </div>
+      
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" 
+      formControlName="password" [ngClass]="{'is-invalid':submit&&f.password.errors}"
+      [(ngModel)]="data.password">
+      <div *ngIf="submit&&f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Name is Required</div>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form> -->

@@ -1,0 +1,136 @@
+
+
+<mat-toolbar color="bg-light">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon></button> 
+      <mat-toolbar-row>
+        <h1> Contact Application</h1><div style="margin-left: 800px;">
+        <button mat-button [routerLink]="['/create-contact']">AddContact</button>
+        <button mat-button (click)="logout()">Logout</button>
+        <img src="./assets/pictures/profile.jpeg" 
+        height="20px" width="20px"></div>
+    </mat-toolbar-row>
+   
+
+  <!-- <div class="division" style="background-color: gray;">
+    <router-outlet></router-outlet>
+  </div> -->
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened="true">
+     
+      <mat-nav-list>
+        <a mat-list-item style="text-align: center;">Home</a>
+        <a mat-list-item>About</a>
+       
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      hiiiii
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+     
+      <!-- <div class="content mat-elevation-z4" style="height: 88vh;"> 
+        <router-outlet></router-outlet>
+     </div> -->
+      
+   
+
+
+
+
+
+
+
+<!-- <mat-toolbar color="bg-light">
+  <mat-toolbar-row>
+    <h1> Contact Application</h1><div style="margin-left: 800px;">
+    <button mat-button [routerLink]="['/create-contact']">AddContact</button>
+    <button mat-button (click)="logout()">Logout</button>
+    <img src="./assets/pictures/profile.jpeg" 
+    height="20px" width="20px"></div>
+    </mat-toolbar-row>
+   
+  </mat-toolbar> -->
+
+  
+  
+  
+  
+  <!-- <form>
+    <table class="table">
+       <tr>
+         <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Action</th>
+        </tr>
+      <tr *ngFor="let c of contacts">
+          <td>{{c.cId}}</td>
+         <td>{{c.name}}</td>
+          <td>{{c.email}}</td>
+          <td>{{c.phone}}</td>
+          <td><button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" 
+            data-bs-target="#editContact" (click)="load(c)">Edit</button>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteContacts(c)">Delete</button></td>
+      </tr>
+    </table>
+    </form>
+
+    <div class="modal" tabindex="-1" id="editContact">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Update Contact</h5>
+           </div>
+          <div class="modal-body">
+
+            <form [formGroup]="addContactForm">
+              
+              
+              <input type="hidden" class="form-control" formControlName="id">
+                
+              <label for="">Name:</label>
+              
+              <input type="text" placeholder="name" class="form-control" formControlName="name"
+                  [ngClass]="{'is-invalid':submit&&f.name.errors}" [(ngModel)]="dataset.name">
+              <div *ngIf='submit&&f.name.errors' class="invalid-feedback">
+                  <div *ngIf='f.name.errors.required'> name is required</div>
+              </div>
+              <label for="">Email:</label>
+              <input type="email" placeholder="Email" class="form-control" formControlName="email"
+                  [ngClass]="{'is-invalid':submit&&f.email.errors}" [(ngModel)]="dataset.email">
+              <div *ngIf='submit&&f.email.errors' class="invalid-feedback">
+                  <div *ngIf='f.email.errors.required'>Email is required</div>
+                  <div *ngIf='f.email.errors.email'>Invalid email</div>
+              </div>
+  
+              <label for="">Phone:</label>
+              <input type="text" placeholder="Phone" class="form-control" formControlName="phone"
+                  [ngClass]="{'is-invalid':submit&&f.phone.errors}" [(ngModel)]="dataset.phone">
+              <div *ngIf='submit&&f.phone.errors' class="invalid-feedback">
+                  <div *ngIf='f.phone.errors.required'>Phone number is required</div>
+                  <div *ngIf='f.phone.errors.pattern'>Invalid Phone number</div>
+              </div>
+  
+  
+             
+          </form>
+
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-success" (click)=" onSubmit()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  
+  
+  
+  <router-outlet></router-outlet>

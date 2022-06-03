@@ -1,0 +1,84 @@
+
+
+
+
+<mat-toolbar color="bg-light">
+  <mat-toolbar-row>
+   
+    <h1> Contact Application</h1>
+  
+    </mat-toolbar-row>
+    </mat-toolbar>
+
+
+<div>
+  <mat-card>
+   <div class="container">
+     <div class="row">
+       <div class="col-md-6 offset-md-3">
+       
+        <div class="container text-center">
+
+          <h1 class="text-center">Login here !!!!!</h1>
+         
+          <form [formGroup]="loginForm" (ngSubmit)="onsubmit()">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input matInput required formControlName="username"
+               placeholder="Enter here"/>
+              <!-- <mat-hint>Username must be unique  !!!</mat-hint> -->
+              </mat-form-field>
+              <br>
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" required formControlName="password" 
+                placeholder="Enter here"/>
+                
+                </mat-form-field>
+                <div>
+                  <button mat-raised-button color="black-outline" type="submit" class="me-2">Login</button>
+                  <!-- <button mat-raised-button color="primaryblack-outline" type="submit" 
+                  [routerLink]="['/signup']">SignUp</button> -->
+                 
+                </div>
+          </form>
+       
+        </div>
+        
+       </div>
+     </div>
+</div>
+</mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onsubmit()">
+   
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username" [ngClass]="{'is-invalid':submit&&f.username.errors}">
+      <div *ngIf="submit&&f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Email is Required</div>
+      </div>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" [ngClass]="{'is-invalid':submit&&f.password.errors}">
+      <div *ngIf="submit&&f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is Required</div>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>  -->
