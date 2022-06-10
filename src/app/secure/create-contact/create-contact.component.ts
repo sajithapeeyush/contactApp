@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 import { ContactService } from 'src/contact.service';
 
 @Component({
@@ -10,13 +11,15 @@ import { ContactService } from 'src/contact.service';
 })
 export class CreateContactComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private contactService:ContactService,private router:Router) { }
+  constructor(private fb:FormBuilder,private contactService:ContactService,
+    private router:Router,private authService:AuthService) { }
 
   ngOnInit(): void {
   }
   addContactForm= this.fb.group({
+    
     name:['',Validators.required],
-     email:['',[Validators.required,Validators.email]],
+    email:['',[Validators.required,Validators.email]],
     phone:['',[Validators.required]]
    
     
@@ -24,8 +27,9 @@ export class CreateContactComponent implements OnInit {
   
 
   data={
+   
    name:'',
-    email:'',
+   email:'',
    phone:''
    
   }
@@ -42,5 +46,9 @@ export class CreateContactComponent implements OnInit {
       this.router.navigate(['/secure']);
     });
     
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']).then(_ => console.log('Logout'));
   }
 }

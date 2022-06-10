@@ -1,15 +1,15 @@
 
 
 
-<mat-toolbar color="#ADD8E6">
+<!-- <mat-toolbar color="#ADD8E6">
   <mat-toolbar-row>
    
     <h1> Contact Application</h1>
   
     </mat-toolbar-row>
-    </mat-toolbar>
+    </mat-toolbar> -->
 
-
+<div><h1 class="tagline">Contact Book</h1></div>
   
   
   <mat-card>  
@@ -35,7 +35,7 @@
   
                <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" required  formControlName="email"
+                <input  matInput type="email" required  formControlName="email"
                 placeholder="Enter here" [(ngModel)]="data.username">
                 <mat-hint>Email must be unique  !!!</mat-hint>
                 </mat-form-field>
@@ -47,7 +47,7 @@
                  
                  </mat-form-field>
                  <div class="container text-center">
-                   <button mat-raised-button color="black-outline" type="submit">Register</button>
+                   <button class="loginw" mat-raised-button color="black-outline" type="submit">Register</button>
                  </div>
                  <div class="container text-center">
                   <a href="/login">Already have an account?</a>

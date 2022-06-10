@@ -2,10 +2,14 @@
 mat-toolbar{background-color: lightskyblue}
 mat-accordion{
     margin-top: 500px;
+   
 }
 mat-expansion-panel {
-    
+    margin-bottom: 5px;
     text-align: center;
     margin-left: 400px;
     width: 500px;
+}
+mat-sidenav-container{
+    height: 100%;
 }

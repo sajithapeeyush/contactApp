@@ -1,0 +1,108 @@
+<div>
+    <mat-toolbar>
+      <mat-toolbar-row>
+       <img src="./assets/pictures/logo.jpeg" height="40px" width="40px"><h1>
+           Contact Application</h1>
+        <div style="margin-left: 800px;">
+          <!-- <button mat-button [routerLink]="['/create-contact']">AddContact</button> -->
+          <!-- <a mat-list-item style="text-align: center" [routerLink]="['/secure']">Home</a> -->
+          <button mat-button [routerLink]="['/secure']">Home</button>
+          <button mat-button (click)="logout()">Logout</button>
+          <img src="./assets/pictures/profile.jpeg" height="20px" width="20px">
+        </div>
+      </mat-toolbar-row>
+  
+    </mat-toolbar>
+  </div>
+
+
+<div class="mystyle">
+  <!-- <form [formGroup]="reactiveform"> -->
+    <form>
+  <mat-card class="style-mat-card">
+    <mat-card-actions>
+      <button mat-button color="warn">
+       <!-- (click)="onUploadFiles(reactiveform)"  -->
+         <!-- (click)="saveForm(reactiveform)"  -->
+       
+        <mat-icon>file_upload</mat-icon>
+        Upload
+        </button>
+    </mat-card-actions>
+
+  </mat-card>
+  <div class="form-group">
+  <input type="file" #fileupload id="fileupload" name="fileupload"
+  (change)="onSelectFile($event)">
+ <!-- <span>{{file.name}}</span>  -->
+ </div>
+</form>
+</div>
+
+
+
+
+
+
+
+  <!-- <div class="up"><h1>Upload and Download Files</h1>
+    <div class="form-group">
+  <form>
+    <fieldset>
+      <div class="form-group">
+        <div>
+          <input type="file" />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="form-group">
+        <div>
+          <input type="submit" (click)="uploadfile()">
+        </div>
+      </div>
+    </fieldset>
+    </form>
+    </div>
+  </div> -->
+
+  <!-- <div class="container" style="margin-top: 20px;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Upload and Download Files</h4>
+      </div><br>
+      <div class="panel-body">        
+        <strong>Select files from your computer</strong>
+        <div *ngIf="fileStatus.status==='progress'">
+          <div class="progress">
+            <div [style.width.%]="fileStatus.percent" class="progress-bar progress-bar-animated bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                {{ fileStatus.requestType }} {{ fileStatus.percent }} 
+              </div>
+          </div>
+        </div> <hr>
+  
+        <form enctype="multipart/form-data">
+          <fieldset>
+            <div class="form-group">
+              <div>
+                <input type="file" (change)="onUploadFiles($event.target.files)" name="files" multiple class="form-control" />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        
+        <br>  
+        
+        <div *ngIf="filenames?.length > 0" class="js-upload-finished">
+          <h3>Processed files</h3>
+          <div *ngFor="let filename of filenames" class="list-group">
+            <a (click)="onDownloadFile(filename)" class="list-group-item list-group-item-success" style="cursor: pointer;">
+              {{ filename }}            
+              <a class="alert-success float-right">Download</a>
+            </a><br>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+      </div> -->

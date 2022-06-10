@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactService } from 'src/contact.service';
 import { AuthService } from '../auth.service';
 import { ReactiveFormsModule} from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-secure',
@@ -15,8 +16,28 @@ export class SecureComponent implements OnInit {
   // isLoadingResults = false;
   // public loading:boolean=false;
   public contacts:Array<any>=[];
-  constructor(private fb:FormBuilder,private authService: AuthService, private router: Router,private cservice:ContactService) { }
 
+  selectedResult: any;
+  length!: number;
+  pageSize = 5;
+  pageSizeOptions: number[] = [1, 2, 5, 10];
+    pageEvent!: PageEvent;
+ 
+
+  constructor(private fb:FormBuilder,private authService: AuthService, private router: Router,private cservice:ContactService) { }
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
+  }
+
+  getData( event: PageEvent) {
+    console.log(event);
+    this.selectedResult = this.contacts.slice(event.pageIndex * event.pageSize,
+                                             event.pageIndex * event.pageSize + event.pageSize);
+    console.log(this.selectedResult);
+    return event;
+  }
   ngOnInit(): void {
     // this.loading=true
     // this.isLoadingResults = true;
@@ -27,11 +48,25 @@ export class SecureComponent implements OnInit {
         // this.isLoadingResults = false;
       });
       this.getContacts();
-      this.cservice.viewContact().subscribe(data=>{
-        console.log(data)
-      })
+      // this.cservice.viewContact().subscribe(data=>{
+      //   console.log(data)
+      // })
 
   }
+
+  // setPageSizeOptions(setPageSizeOptionsInput: string) {
+  //   if (setPageSizeOptionsInput) {
+  //     this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  //   }
+  // }
+  
+  // getData( event?: PageEvent) {
+    
+      
+  //   // this.selectedResult = this.contacts.slice(event.pageIndex * event.pageSize,
+  //   //    event.pageIndex * event.pageSize + event.pageSize);
+  //   return event;
+  // }
   addContactForm= this.fb.group({
     id:[''],
     name:['',Validators.required],
@@ -77,7 +112,11 @@ export class SecureComponent implements OnInit {
   }
 public getContacts(){
   this.cservice.viewContact().subscribe((data:Array<any>)=>{
+   
     this.contacts=data
+  
+    this.length = this.contacts.length;
+    this.selectedResult = this.contacts.slice(0, this.pageSize);
     console.log(data)
   })
 

@@ -1,1 +1,59 @@
-<p>view-contact works!</p>
+<!-- <form (ngSubmit)="upload()" [formGroup]="form">
+  <input ng-model="file_upload" name="file" type="file" (change)="fileChange($event)" #fileInput>
+  <button type="submit">Submit</button>
+</form>  -->
+
+<div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+     <img src="./assets/pictures/logo.jpeg" height="40px" width="40px"><h1>
+         Contact Application</h1>
+      <div style="margin-left: 800px;">
+        <!-- <button mat-button [routerLink]="['/create-contact']">AddContact</button> -->
+        <!-- <a mat-list-item style="text-align: center" [routerLink]="['/secure']">Home</a> -->
+        <button mat-button [routerLink]="['/secure']">Home</button>
+        <button mat-button (click)="logout()">Logout</button>
+        <img src="./assets/pictures/profile.jpeg" height="20px" width="20px">
+      </div>
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+</div>
+
+
+<div class="mystyle">
+
+  <form (ngSubmit)="upload()" [formGroup]="form">
+<mat-card class="style-mat-card">
+  <mat-card-actions>
+    <button type="submit"  mat-button color="warn">
+     
+     
+      <mat-icon>file_upload</mat-icon>
+      Upload
+      </button>
+  </mat-card-actions>
+
+</mat-card>
+<div>
+  <input ng-model="file_upload" name="file" type="file" 
+  (change)="fileChange($event)" #fileInput>
+  
+<!-- <input type="file" #fileupload id="fileupload" name="fileupload"
+(change)="onSelectFile($event)"> -->
+<!-- <span>{{file.name}}</span>  -->
+</div>
+
+<div>
+  <h1>
+    Download the file
+  </h1>
+  <button mat-button color="warn" (click)="downloadf()">
+     
+     <mat-icon>file_download</mat-icon>
+     Download
+     </button>
+</div>
+</form>
+</div>
+

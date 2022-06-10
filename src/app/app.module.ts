@@ -14,7 +14,7 @@ import { SecureComponent } from './secure/secure.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
-import {MatPaginatorModule} from '@angular/material/paginator';
+
 import {MatSortModule} from '@angular/material/sort';
 
 
@@ -39,6 +39,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { FooterComponent } from './secure/footer/footer.component';
+import { FileupdownComponent } from './secure/fileupdown/fileupdown.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
+
+
 
 
 
@@ -53,6 +59,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     TrialComponent,
     CreateContactComponent,
     ViewContactComponent,
+    FooterComponent,
+    FileupdownComponent
+  
    
   
     
@@ -65,7 +74,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatPaginatorModule,
     MatProgressSpinnerModule,
     MatSortModule,
     MatTableModule,
@@ -77,7 +85,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatDividerModule,
     MatListModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatPaginatorModule
+    
   ],
   providers: [AuthGuard,TokenService,AuthService,
     {

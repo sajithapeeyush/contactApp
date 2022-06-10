@@ -1,8 +1,26 @@
 mat-toolbar{background-color: lightskyblue}
+.tagline{
+    color: #0AA1DD;
+   
+    font-size: 300%;
+    font-family: tahoma, sans-serif;
+    text-align: center;
+   text-emphasis-color: inherit;
+}
+.text-center{
+    font-size: 100%;
+}
 mat-card{
     color: black;
     background-color: white;
     margin-top: 12px;
     margin-left: 300px;
     margin-right: 300px;
+}
+.loginw{
+    background-color: #E78EA9;
+    width: 200px;
+}
+mat-sidenav {
+    height: 100%;
 }

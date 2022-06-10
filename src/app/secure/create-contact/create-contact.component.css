@@ -2,6 +2,16 @@ mat-toolbar{background-color: lightskyblue}
 mat-card{
     color: black;
     background-color: white;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-top: 500;
+    margin-left: 200px;
+    margin-right: 200px;
+   
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
+.loginw{
+    background-color: #E78EA9;
+    width: 200px;
 }

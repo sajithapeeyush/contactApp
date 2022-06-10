@@ -4,6 +4,7 @@ import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CreateContactComponent } from './secure/create-contact/create-contact.component';
+import { FileupdownComponent } from './secure/fileupdown/fileupdown.component';
 import { SecureComponent } from './secure/secure.component';
 import { ViewContactComponent } from './secure/view-contact/view-contact.component';
 import { SignupComponent } from './signup/signup.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   
    {path: 'secure', canActivate: [ AuthGuard ], component: SecureComponent},
    {path: 'create-contact', canActivate: [ AuthGuard ], component:CreateContactComponent},
+   {path: 'fileupdown', canActivate: [ AuthGuard ],component:FileupdownComponent },
    {path: 'view-contact', canActivate: [ AuthGuard ], component:ViewContactComponent}
 ];
 
